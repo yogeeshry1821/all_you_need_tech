@@ -1,6 +1,6 @@
-import {model, models, Schema} from "mongoose";
+import mongoose from "mongoose";
 
-const ProductSchema = new Schema({
+const ProductSchema = new mongoose.Schema({
   name: String,
   description: String,
   price: Number,
@@ -8,5 +8,11 @@ const ProductSchema = new Schema({
   picture: String,
 });
 
-const Product = models?.Product || model('Product', ProductSchema);
+const Product =
+  mongoose.models.Product || mongoose.model("Product", ProductSchema);
+
+// Accessing the database name
+const databaseName = mongoose.connection.db;
+console.log("Database Name:", databaseName);
+
 export default Product;

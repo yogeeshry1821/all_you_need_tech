@@ -7,9 +7,8 @@ import Layout from "@/components/Layout";
 
 export default function Home({ products }) {
   const [phrase, setPhrase] = useState("");
-
+  
   const categoryName = [...new Set(products.map((p) => p.category))];
-
   if (phrase) {
     products = products.filter((p) => p.name.toLowerCase().includes(phrase));
   }
@@ -25,6 +24,7 @@ export default function Home({ products }) {
       />
       <div>
         {categoryName.map((categoryName) => (
+          
           <div key={categoryName}>
             {products.find((p) => p.category === categoryName) && (
               <div>
