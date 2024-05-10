@@ -12,7 +12,5 @@ const Product =
   mongoose.models.Product || mongoose.model("Product", ProductSchema);
 
 // Accessing the database name
-const databaseName = mongoose.connection.db;
-console.log("Database Name:", databaseName);
 
 export default Product;

@@ -4,7 +4,6 @@ import Product from "@/models/Product";
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req,res){
-    // console.log("lol")
     await initMongoose();
 
     if(req.method !== 'POST'){
